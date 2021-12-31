@@ -39,7 +39,8 @@ old_time=$now
 
 print_volume() {
 	volume="$(amixer get Master | tail -n1 | sed -r 's/.*\[(.*)%\].*/\1/')"
-	if test "$volume" -gt 0
+  togvol="$(amixer get Master | tail -n1 | sed -r 's/.*\[.*\].*\[.*\].*\[(.*)].*/\1/')"
+	if test "$volume" -gt 0 && test "$togvol"=="on";
 	then
 		echo -e "\uE05D${volume}"
 	else

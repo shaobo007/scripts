@@ -8,9 +8,10 @@
 
 dwm_alsa () {
     VOL=$(amixer get Master | tail -n1 | sed -r "s/.*\[(.*)%\].*/\1/")
+    TOGVOL="$(amixer get Master | tail -n1 | sed -r 's/.*\[.*\].*\[.*\].*\[(.*)].*/\1/')"
     printf "%s" "$SEP1"
     if [ "$IDENTIFIER" = "unicode" ]; then
-        if [ "$VOL" -eq 0 ]; then
+        if test "$VOL" -eq 0  || test "$TOGVOL" = "off"; then
             printf "🔇"
         elif [ "$VOL" -gt 0 ] && [ "$VOL" -le 33 ]; then
             printf "🔈 %s%%" "$VOL"
@@ -20,7 +21,7 @@ dwm_alsa () {
             printf "🔊 %s%%" "$VOL"
         fi
     else
-        if [ "$VOL" -eq 0 ]; then
+        if test "$VOL" -eq 0 || test "$TOGVOL" = "off"; then
             printf "MUTE"
         elif [ "$VOL" -gt 0 ] && [ "$VOL" -le 33 ]; then
             printf "VOL %s%%" "$VOL"
@@ -32,4 +33,3 @@ dwm_alsa () {
     fi
     printf "%s\n" "$SEP2"
 }
-
