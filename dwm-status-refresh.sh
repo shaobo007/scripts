@@ -154,19 +154,20 @@ get_time_until_charged() {
 get_battery_combined_percent() {
 
   # get charge of all batteries, combine them
+  #total_charge=$(expr $(acpi -b | awk '{print $4}' | grep -Eo "[0-9]+" | paste -sd+ | bc));
   total_charge=$(expr $(acpi -b | awk '{print $4}' | grep -Eo "[0-9]+" | paste -sd+ | bc));
 
   # get amount of batteries in the device
-  battery_number=$(acpi -b | wc -l);
+  #battery_number=$(acpi -b | wc -l);
 
-  percent=$(expr $total_charge / $battery_number);
+  percent=$(expr $total_charge);
 
   echo $percent;
 }
 
 get_battery_charging_status() {
 
-  if $(acpi -b | grep --quiet Discharging)
+  if $(acpitool -b | grep --quiet Discharging)
   then
     echo "🔋";
   else # acpi can give Unknown or Charging if charging, https://unix.stackexchange.com/questions/203741/lenovo-t440s-battery-status-unknown-but-charging
@@ -194,7 +195,6 @@ show_record(){
 LOC=$(readlink -f "$0")
 DIR=$(dirname "$LOC")
 export IDENTIFIER="unicode"
-
 get_bytes
 #💿
 # Calculates speeds
@@ -203,7 +203,6 @@ vel_trans=$(get_velocity $transmitted_bytes $old_transmitted_bytes $now)
 
 #xsetroot -name "  $(get_weather) $(print_mem_per) $(print_gpu_stat) 🌐⬇️ $vel_recv ⬆️ $vel_trans $(dwm_alsa) |$(print_bat)|$(show_record) $(print_date) "
 xsetroot -name "  $(get_weather) $(print_mem_per) 🌐⬇️ $vel_recv ⬆️ $vel_trans $(print_volume) |$(print_bat)|$(show_record) $(print_date) "
-print_mem_per
 # Update old values to perform new calculations
 old_received_bytes=$received_bytes
 old_transmitted_bytes=$transmitted_bytes

@@ -2,3 +2,4 @@
 sleep 2
 fcitx &
 utools &
+#thunderbird &
