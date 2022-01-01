@@ -1,6 +1,4 @@
 #!/bin/bash
-
-sleep 10
-#xmodmap ~/.Xmodmap &
+sleep 2
 fcitx &
 utools &
