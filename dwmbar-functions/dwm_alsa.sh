@@ -33,3 +33,4 @@ dwm_alsa () {
     fi
     printf "%s\n" "$SEP2"
 }
+dwm_alsa

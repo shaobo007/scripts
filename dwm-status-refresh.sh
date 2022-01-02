@@ -10,9 +10,9 @@ function get_weather() {
 
   printf "%s" "$SEP1"
   if [ "$IDENTIFIER" = "unicode" ]; then
-    printf "%s" "$(curl -s wttr.in/$LOCATION?format=1)"
+    printf "%s" "$(curl -s wttr.in?format="%C+%t")"
   else
-    printf "WEA %s" "$(curl -s wttr.in/$LOCATION?format=1 | grep -o "[0-9].*")"
+    printf "WEA %s" "$(curl -s wttr.in/$LOCATION?format=3 | grep -o "[0-9].*")"
   fi
   printf "%s\n" "$SEP2"
 }
@@ -49,7 +49,6 @@ get_bytes
 old_received_bytes=$received_bytes
 old_transmitted_bytes=$transmitted_bytes
 old_time=$now
-
 #print_volume() {
 #volume="$(amixer get Master | tail -n1 | sed -r 's/.*\[(.*)%\].*/\1/')"
 #togvol="$(amixer get Master | tail -n1 | sed -r 's/.*\[.*\].*\[.*\].*\[(.*)\].*/\1/')"
@@ -125,12 +124,6 @@ print_gpu_stat(){
 
 }
 
-#get_cpu_stat(){
-#CPU_IDLE=`top -b -n 1 | grep Cpu | awk '{print $8}'|cut -f 1 -d "."`
-#CPU_USE=`expr 100 - $CPU_IDLE`
-#echo "💻 $CPU_USE%"
-#}
-
 get_time_until_charged() {
 
   # parses acpitool's battery info for the remaining charge of all batteries and sums them up
@@ -191,7 +184,6 @@ show_record(){
   echo " $size $(basename $rp)"
 }
 
-
 LOC=$(readlink -f "$0")
 DIR=$(dirname "$LOC")
 export IDENTIFIER="unicode"
@@ -201,8 +193,36 @@ get_bytes
 vel_recv=$(get_velocity $received_bytes $old_received_bytes $now)
 vel_trans=$(get_velocity $transmitted_bytes $old_transmitted_bytes $now)
 
+#get_cpu_stat(){
+  #CPU=(`sed -n 's/^cpu\s//p' /proc/stat`)
+  #IDLE=${CPU[3]}
+  #TOTAL=0
+  #for VALUE in "${CPU[@]}"; do
+    #let "TOTAL=$TOTAL+$VALUE"
+  #done
+#}
+#get_cpu_stat
+#PREV_IDLE=$IDLE
+#PREV_TOTAL=$TOTAL
+#sleep 1
+#get_cpu_stat
+#NEW_IDlE=$IDLE
+#NEW_TOTAL=$TOTAL
+#let "DIFF_IDLE=$NEW_IDLE-$PREV_IDLE"
+#let "DIFF_TOTAL=$NEW_TOTA-$PREV_TOTAL"
+#let "DIFF_USAGE=(1000*($DIFF_TOTAL-$DIFF_IDLE)/$DIFF_TOTAL+5)/10"
+#get_cpu_uti=$(echo -en "\rCPU: $DIFF_USAGE% ")
+#echo $get_cpu_uti
+
+### Remember the total and idle CPU times for the next check.
+#PREV_TOTAL="$NEW_TOTAL"
+#PREV_IDLE="$NEW_IDLE"
+
+# Wait before checking again.
+#sleep 0.5
+
 #xsetroot -name "  $(get_weather) $(print_mem_per) $(print_gpu_stat) 🌐⬇️ $vel_recv ⬆️ $vel_trans $(dwm_alsa) |$(print_bat)|$(show_record) $(print_date) "
-xsetroot -name "  $(get_weather) $(print_mem_per) 🌐⬇️ $vel_recv ⬆️ $vel_trans $(print_volume) |$(print_bat)|$(show_record) $(print_date) "
+xsetroot -name "  $(get_weather) $(print_mem_per) 🌐 ⬇️$vel_recv ⬆️$vel_trans $(print_volume) |$(print_bat)|$(show_record) $(print_date) "
 # Update old values to perform new calculations
 old_received_bytes=$received_bytes
 old_transmitted_bytes=$transmitted_bytes
