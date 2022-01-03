@@ -7,7 +7,7 @@ compton &
 #/bin/bash ~/scripts/tap-to-click.sh &
 #/bin/bash ~/scripts/inverse-scroll.sh &
 nm-applet &
-#xfce4-power-manager &
+xfce4-power-manager &
 /bin/bash ~/scripts/start_vpn.sh &
 #xfce4-volumed-pulse &
 #/bin/bash ~/scripts/run-mailsync.sh &
