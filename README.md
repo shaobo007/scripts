@@ -4,7 +4,7 @@ some scripts
 ### some base apt install
 
 build-essential cmake curl git neofetch proxychains fcitx fish openssh-server net-tools feh flameshot ~~vlc~~ figlet 
-
+arandr
 Dependencies for  libx11-dev libxft-dev libxinerama-dev libharfbuzz-dev sharutils
 
 ### manaul install
@@ -24,13 +24,12 @@ sudo apt-get install lazygit
 
 * uTools
 
-* ranger
-
 * fzf
 ```
  git clone --depth 1 https://github.com/junegunn/fzf.git
 ```
 * nvim 
+
 requirements:
 ```{bash}
 sudo add-apt-repository ppa:neovim-ppa/stable
@@ -48,8 +47,12 @@ proxychain vim
 
 * miniconda 
 
+* nerd font
+
+* ranger
+
 * labelimg --label tool
-* 
+
 * dwm st dmenu
 
 * slock
@@ -71,9 +74,18 @@ sudo update-alternatives --config gcc
 ```
 
 * dunst --notification service
+
 * sxiv --image viewer
+
 * mutt? --mail
+
 * zathura  --pdf viewer
+
 * mpv  --media player
+
 * mpd?  --music player
+
+* dict for linux ?
+
+* bluetoothctl ?
 
