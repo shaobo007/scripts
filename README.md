@@ -1,10 +1,14 @@
 # scripts
 some scripts  
-* These steps are for ubuntu18.04
-## some base apt install
+## These steps are for ubuntu18.04
+### some base apt install
 
-build-essential cmake curl git neofetch proxychains fcitx fish openssh-server net-tools feh flameshot vlc figlet 
-dependencies for  libx11-dev libxft-dev libxinerama-dev libharfbuzz-dev sharutils
+build-essential cmake curl git neofetch proxychains fcitx fish openssh-server net-tools feh flameshot ~~vlc~~ figlet 
+
+Dependencies for  libx11-dev libxft-dev libxinerama-dev libharfbuzz-dev sharutils
+
+### manaul install
+
 * omf
 
 * lazygit 
@@ -13,6 +17,7 @@ sudo add-apt-repository ppa:lazygit-team/release
 sudo apt-get update
 sudo apt-get install lazygit
 ```
+
 * chrome
 
 * sogoupinyin
@@ -43,10 +48,11 @@ proxychain vim
 
 * miniconda 
 
-* labelimg
-
+* labelimg --label tool
+* 
 * dwm st dmenu
-* slock?
+
+* slock
 ```
  
 sudo add-apt-repository ppa:ubuntu-toolchain-r/test
@@ -64,4 +70,10 @@ sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 900 --slave /
 sudo update-alternatives --config gcc
 ```
 
+* dunst --notification service
+* sxiv --image viewer
+* mutt? --mail
+* zathura  --pdf viewer
+* mpv  --media player
+* mpd?  --music player
 
