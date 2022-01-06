@@ -12,6 +12,8 @@ Dependencies for  libx11-dev libxft-dev libxinerama-dev libharfbuzz-dev sharutil
 
 * omf
 
+* zsh?
+
 * lazygit 
 ```
 sudo add-apt-repository ppa:lazygit-team/release
@@ -101,3 +103,18 @@ rfkill unblock bluetooth
 * sxhkd --global keybinding?
 
 * cmus --music player?
+
+* calcurse --calendar 
+  
+* cache file clean?
+
+* entr ?
+
+## some config filedir
+* fish config
+* neofetch config
+* mpv config
+* sxhkd config
+* sxiv config
+* zathura config
+
