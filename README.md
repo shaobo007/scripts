@@ -3,8 +3,9 @@ some scripts
 ## These steps are for ubuntu18.04
 ### some base apt install
 
-build-essential cmake curl git neofetch proxychains fcitx fish openssh-server net-tools feh flameshot ~~vlc~~ figlet 
+build-essential cmake curl git neofetch proxychains fcitx fish openssh-server net-tools feh ~~flameshot~~ ~~vlc~~ figlet 
 arandr
+
 Dependencies for  libx11-dev libxft-dev libxinerama-dev libharfbuzz-dev sharutils
 
 ### manaul install
@@ -81,11 +82,22 @@ sudo update-alternatives --config gcc
 
 * zathura  --pdf viewer
 
+* groff
+
+* maim xdotool --for screenshot
+
 * mpv  --media player
 
 * mpd?  --music player
 
+* ~~qq music player~~
+
 * dict for linux ?
 
 * bluetoothctl ?
+```
+rfkill unblock bluetooth
+```
+* sxhkd --global keybinding?
 
+* cmus --music player?

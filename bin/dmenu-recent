@@ -1,12 +1,11 @@
-#!/bin/sh
+#!/bin/bash
 # end a command with ; to run in a terminal
 
 term="${TERMINAL:-st} -e"
 cachedir=${XDG_CACHE_HOME:-"$HOME/.cache"}
 cache="$cachedir/dmenu_recent"
 
-touch "$cache"
-
+touch "$cache" 
 # cleaning
 while read cmd
 do

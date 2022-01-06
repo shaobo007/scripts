@@ -1,6 +1,6 @@
 #!/bin/bash
 
 while true; do
-	/bin/bash ~/scripts/wp-change.sh
-	sleep 10m
+  ./bin/wp-change
+	sleep 20m
 done
