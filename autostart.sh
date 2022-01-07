@@ -8,6 +8,7 @@ compton &
 #/bin/bash ~/scripts/tap-to-click.sh &
 #/bin/bash ~/scripts/inverse-scroll.sh &
 nm-applet &
+blueman-applet &
 xfce4-power-manager &
 ./bin/start-vpn &
 #xfce4-volumed-pulse &

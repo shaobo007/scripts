@@ -5,8 +5,10 @@ some scripts
 
 build-essential cmake curl git neofetch proxychains fcitx fish openssh-server net-tools feh ~~flameshot~~ ~~vlc~~ figlet 
 arandr
+nm-applet buleman
 
 Dependencies for  libx11-dev libxft-dev libxinerama-dev libharfbuzz-dev sharutils
+
 fonts-symbola --for more emojis
 ### manaul install
 
@@ -27,7 +29,7 @@ sudo apt-get install lazygit
 
 * uTools
 
-* fzf
+* fzf + silversearcher-ag
 ```
  git clone --depth 1 https://github.com/junegunn/fzf.git
 ```
@@ -56,6 +58,8 @@ proxychain vim
 
 * labelimg --label tool
 
+### some suckless stuff
+
 * dwm st dmenu
 
 * slock
@@ -82,15 +86,23 @@ sudo update-alternatives --config gcc
 
 * mutt? --mail
 
-* zathura  --pdf viewer
-
-* groff
+* zathura  --pdf viewer (groff) needed 
 
 * maim xdotool --for screenshot
 
 * mpv  --media player
 
 * mpd?  --music player
+
+* sxhkd --global keybinding?
+
+* cmus --music player?
+
+* calcurse --calendar 
+
+* rsync  --file sync tool
+
+* entr ?
 
 * ~~qq music player~~
 
@@ -100,24 +112,13 @@ sudo update-alternatives --config gcc
 ```
 rfkill unblock bluetooth
 ```
-
 * brightness-control-tool  --brightness fix
 ```
  sudo add-apt-repository ppa:apandada1/brightness-controller
  sudo apt update
  sudo apt-get install brightness-controller-simple
 ```
-* sxhkd --global keybinding?
-
-* cmus --music player?
-
-* calcurse --calendar 
-  
-* cache file clean?
-
-* entr ?
-
-* rsync  --file sync tool
+* cache file clean? --using dmenu
 
 ## some config filedir
 * fish config
@@ -132,12 +133,12 @@ rfkill unblock bluetooth
   TERMINAL=st
   BROWSER="google-chrome-stable"
   EDITOR=nvim
-  
+
   DOT_CONFIG_HOME="$HOME/.config"
   DOT_CACHE_HOME="$HOME/.cache"
   BUILD_HOME="$HOME/Builds"
   SCRIPT_HOME="$HOME/scrips"
-  
+
  ```
 * paper -> Document
 * note, md -> Document
