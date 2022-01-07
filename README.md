@@ -7,7 +7,7 @@ build-essential cmake curl git neofetch proxychains fcitx fish openssh-server ne
 arandr
 
 Dependencies for  libx11-dev libxft-dev libxinerama-dev libharfbuzz-dev sharutils
-
+fonts-symbola --for more emojis
 ### manaul install
 
 * omf
@@ -100,6 +100,13 @@ sudo update-alternatives --config gcc
 ```
 rfkill unblock bluetooth
 ```
+
+* brightness-control-tool  --brightness fix
+```
+ sudo add-apt-repository ppa:apandada1/brightness-controller
+ sudo apt update
+ sudo apt-get install brightness-controller-simple
+```
 * sxhkd --global keybinding?
 
 * cmus --music player?
@@ -110,6 +117,8 @@ rfkill unblock bluetooth
 
 * entr ?
 
+* rsync  --file sync tool
+
 ## some config filedir
 * fish config
 * neofetch config
@@ -118,3 +127,19 @@ rfkill unblock bluetooth
 * sxiv config
 * zathura config
 
+## basic env varieties
+ ```
+  TERMINAL=st
+  BROWSER="google-chrome-stable"
+  EDITOR=nvim
+  
+  DOT_CONFIG_HOME="$HOME/.config"
+  DOT_CACHE_HOME="$HOME/.cache"
+  BUILD_HOME="$HOME/Builds"
+  SCRIPT_HOME="$HOME/scrips"
+  
+ ```
+* paper -> Document
+* note, md -> Document
+* source -> Document
+ 

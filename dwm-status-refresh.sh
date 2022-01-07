@@ -10,7 +10,8 @@ function get_weather() {
 
   printf "%s" "$SEP1"
   if [ "$IDENTIFIER" = "unicode" ]; then
-    printf "%s" "$(curl -s wttr.in/$LOCATION?format="%C+%t")"
+    #printf "%s" "$(curl -s wttr.in/$LOCATION?format="%C+%t")"
+    printf "%s" "$(curl -s wttr.in/$LOCATION?format=3)"
   else
     printf "WEA %s" "$(curl -s wttr.in/$LOCATION?format=3 | grep -o "[0-9].*")"
   fi
