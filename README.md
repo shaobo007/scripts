@@ -3,11 +3,13 @@ some scripts
 ## These steps are for ubuntu18.04
 ### some base apt install
 
-build-essential cmake curl git neofetch proxychains fcitx fish openssh-server net-tools feh ~~flameshot~~ ~~vlc~~ figlet 
+build-essential cmake curl git neofetch proxychains fcitx fish openssh-server net-tools feh ~~flameshot~~ ~~vlc~~ figlet compton
 arandr
 nm-applet buleman
 
-Dependencies for  libx11-dev libxft-dev libxinerama-dev libharfbuzz-dev sharutils
+Dependencies for  libx11-dev libxft-dev libxinerama-dev libharfbuzz-dev sharutils libxrandr-dev
+
+libimlib2-dev
 
 fonts-symbola --for more emojis
 ### manaul install
@@ -22,7 +24,6 @@ sudo add-apt-repository ppa:lazygit-team/release
 sudo apt-get update
 sudo apt-get install lazygit
 ```
-
 * chrome
 
 * sogoupinyin
@@ -47,6 +48,9 @@ cd ~/.config/
 git clone git@github.com:shaobo007/nvim.git
 cd nvim
 proxychain vim
+sudo apt install yarn
+[sudo] npm -g install instant-markdown-d@next  (for instant-markdown-preview)
+
 ```
 * cuda
 
@@ -143,4 +147,4 @@ rfkill unblock bluetooth
 * paper -> Document
 * note, md -> Document
 * source -> Document
- 
+
