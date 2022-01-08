@@ -9,8 +9,8 @@ compton &
 #/bin/bash ~/scripts/inverse-scroll.sh &
 nm-applet &
 blueman-applet &
-xfce4-power-manager &
-./bin/start-vpn &
+#xfce4-power-manager &
+~/scripts/bin/vpn &
 #xfce4-volumed-pulse &
 #/bin/bash ~/scripts/run-mailsync.sh &
 ~/scripts/autostart_wait.sh &

@@ -4,7 +4,7 @@ some scripts
 ### some base apt install
 
 build-essential cmake curl git neofetch proxychains fcitx fish openssh-server net-tools feh ~~flameshot~~ ~~vlc~~ figlet compton
-arandr
+arandr groff 
 nm-applet buleman
 
 Dependencies for  libx11-dev libxft-dev libxinerama-dev libharfbuzz-dev sharutils libxrandr-dev
