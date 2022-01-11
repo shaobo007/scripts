@@ -1,24 +1,43 @@
-# scripts
-some scripts  
+# SCRIPTS
+there are some scripts
 ## These steps are for ubuntu18.04
+```
+  ____  _____    _    ____  __  __ _____
+ |  _ \| ____|  / \  |  _ \|  \/  | ____|
+ | |_) |  _|   / _ \ | | | | |\/| |  _|
+ |  _ <| |___ / ___ \| |_| | |  | | |___
+ |_| \_\_____/_/   \_\____/|_|  |_|_____|
+
+```
 ### some base apt install
+```
+sudo apt install build-essential cmake p7zip-full \
+curl git neofetch proxychains fcitx \
+openssh-server net-tools feh figlet compton silversearcher-ag
+arandr groff xclip buleman maim xdotool acpi acpitool
+```
 
-build-essential cmake curl git neofetch proxychains fcitx fish openssh-server net-tools feh ~~flameshot~~ ~~vlc~~ figlet compton
-arandr groff 
-nm-applet buleman
+* Dependencies for suckless utilities
+```
+sudo apt install libx11-dev libxft-dev libxinerama-dev libharfbuzz-dev sharutils libxrandr-dev libimlib2-dev
 
-Dependencies for  libx11-dev libxft-dev libxinerama-dev libharfbuzz-dev sharutils libxrandr-dev
-
-libimlib2-dev
-
+```
 fonts-symbola --for more emojis
 ### manaul install
+```
+sudo apt install dunst sxiv zathura mpv mpd ncmpcpp \
+pass neomutt msmtp isync rsync sxhkd lynx abook urlview notmuch
+```
+* fish + omf
+```
+sudo apt-add-repository ppa:fish-shell/release-3
+sudo apt update
+sudo apt install fish
+curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
+```
+* ~~zsh?~~
 
-* omf
-
-* zsh?
-
-* lazygit 
+* lazygit
 ```
 sudo add-apt-repository ppa:lazygit-team/release
 sudo apt-get update
@@ -30,17 +49,18 @@ sudo apt-get install lazygit
 
 * uTools
 
-* fzf + silversearcher-ag
+* fzf
 ```
- git clone --depth 1 https://github.com/junegunn/fzf.git
+git clone --depth 1 https://github.com/junegunn/fzf.git
 ```
-* nvim 
+* nvim
 
 requirements:
 ```{bash}
 sudo add-apt-repository ppa:neovim-ppa/stable
 sudo apt update
 sudo apt install neovim
+sudo apt install python-pip python3-pip
 
 curl -fsSL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 sudo apt-get install -y nodejs
@@ -54,21 +74,23 @@ sudo apt install yarn
 ```
 * cuda
 
-* miniconda 
+* miniconda
 
 * nerd font
 
 * ranger
-
+```
+pip install ranger-fm ueberzug
+```
 * labelimg --label tool
 
-### some suckless stuff
+### some suckless utilities
 
 * dwm st dmenu
-
+1. add some useful layout to dwm
 * slock
 ```
- 
+
 sudo add-apt-repository ppa:ubuntu-toolchain-r/test
 
 sudo apt-get update
@@ -88,21 +110,33 @@ sudo update-alternatives --config gcc
 
 * sxiv --image viewer
 
-* mutt? --mail
+* neomutt? --mail
 
-* zathura  --pdf viewer (groff) needed 
+* pass --a password manager
+
+* isync
+
+* msmtp
+
+* mutt-wizzard  lynx pam-gnupg abook urlview
+```
+sudo make install
+
+```
+
+* zathura  --pdf viewer (groff) needed
 
 * maim xdotool --for screenshot
 
 * mpv  --media player
 
-* mpd?  --music player
+* mpd ncmpcpp  --music player
 
 * sxhkd --global keybinding?
 
-* cmus --music player?
+* ~~cmus --music player?~~
 
-* calcurse --calendar 
+* calcurse --calendar
 
 * rsync  --file sync tool
 
@@ -112,15 +146,15 @@ sudo update-alternatives --config gcc
 
 * dict for linux ?
 
-* bluetoothctl ?
+* ~~bluetoothctl ?~~
 ```
 rfkill unblock bluetooth
 ```
 * brightness-control-tool  --brightness fix
 ```
- sudo add-apt-repository ppa:apandada1/brightness-controller
- sudo apt update
- sudo apt-get install brightness-controller-simple
+sudo add-apt-repository ppa:apandada1/brightness-controller
+sudo apt update
+sudo apt-get install brightness-controller-simple
 ```
 * cache file clean? --using dmenu
 
@@ -131,19 +165,22 @@ rfkill unblock bluetooth
 * sxhkd config
 * sxiv config
 * zathura config
+* mpd config
+* ncmpcpp config
+* ~/.profile
 
 ## basic env varieties
- ```
-  TERMINAL=st
-  BROWSER="google-chrome-stable"
-  EDITOR=nvim
+```
+TERMINAL=st
+BROWSER="google-chrome-stable"
+EDITOR=nvim
 
-  DOT_CONFIG_HOME="$HOME/.config"
-  DOT_CACHE_HOME="$HOME/.cache"
-  BUILD_HOME="$HOME/Builds"
-  SCRIPT_HOME="$HOME/scrips"
+XDG_CONFIG_HOME="$HOME/.config"
+XDG_CACHE_HOME="$HOME/.cache"
+BUILD_HOME="$HOME/Repos/build"
+SCRIPT_HOME="$HOME/scrips"
 
- ```
+```
 * paper -> Document
 * note, md -> Document
 * source -> Document
