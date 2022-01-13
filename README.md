@@ -25,7 +25,7 @@ sudo apt install libx11-dev libxft-dev libxinerama-dev libharfbuzz-dev sharutils
 fonts-symbola --for more emojis
 ### manaul install
 ```
-sudo apt install dunst sxiv zathura mpv mpd ncmpcpp \
+sudo apt install dunst sxiv zathura mpv \
 pass neomutt msmtp isync rsync sxhkd lynx abook urlview notmuch
 ```
 * fish + omf
@@ -34,6 +34,7 @@ sudo apt-add-repository ppa:fish-shell/release-3
 sudo apt update
 sudo apt install fish
 curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
+chsh -s /usr/bin/fish
 ```
 * ~~zsh?~~
 
@@ -71,6 +72,7 @@ proxychain vim
 sudo apt install yarn
 [sudo] npm -g install instant-markdown-d@next  (for instant-markdown-preview)
 
+sudo apt install golang-go  (for plug vim-hexokinase)
 ```
 * cuda
 
@@ -131,6 +133,12 @@ sudo make install
 * mpv  --media player
 
 * mpd ncmpcpp  --music player
+```
+ sudo add-apt-repository ppa:cppiber/ppa
+ sudo apt update
+ sudo apt install mpd ncmpcpp
+
+```
 
 * sxhkd --global keybinding?
 
@@ -171,15 +179,23 @@ sudo apt-get install brightness-controller-simple
 
 ## basic env varieties
 ```
-TERMINAL=st
-BROWSER="google-chrome-stable"
-EDITOR=nvim
-
-XDG_CONFIG_HOME="$HOME/.config"
-XDG_CACHE_HOME="$HOME/.cache"
 BUILD_HOME="$HOME/Repos/build"
 SCRIPT_HOME="$HOME/scrips"
 
+export TERMINAL=st
+export EDITOR=nvim
+export BROWSER="google-chrome-stable"
+
+export PASSWORD_STORE_DIR="$HOME/.local/share/password-store"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_DATA_HOME="$HOME/.local/share"
+export NOTMUCH_CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/notmuch-config"
+export MBSYNCRC="${XDG_CONFIG_HOME:-$HOME/.config}/mbsync/config"
+export GIT_CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/git/config"
+export XINITRC="${XDG_CONFIG_HOME:-$HOME/.config}/x11/xinitrc"
+
+#export HISTFILE="${XDG_DATA_HOME:-$HOME/.local/share}/bash_history"
 ```
 * paper -> Document
 * note, md -> Document

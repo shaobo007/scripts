@@ -1,4 +1,4 @@
 #!/bin/sh
 
-feh --recursive --randomize --bg-fill ~/Pictures/uToolsWallpapers
+feh --no-fehbg --recursive --randomize --bg-fill ~/Pictures/uToolsWallpapers
 #feh --recursive --randomize --bg-fill ~/Pictures/wallpapers/view
