@@ -9,6 +9,45 @@ there are some scripts
  |_| \_\_____/_/   \_\____/|_|  |_|_____|
 
 ```
+
+* Time sync
+```
+* sudo timedatectl set-local-rtc 1
+
+* sudo hwclock --localtime --systohc
+```
+
+* grub change
+```
+  1. sudo mkdir /boot/grub/themes
+  2. ./install.sh
+```
+* sudo vim /etc/systemd/system.conf
+```
+* DefaultTimeoutStopSec=3s
+```
+* sudo systemctl daemon-reload
+
+### basic env varieties : /etc/profile
+```
+BUILD_HOME="$HOME/Repos/build"
+SCRIPT_HOME="$HOME/scrips"
+
+export TERMINAL=st
+export EDITOR=nvim
+export BROWSER="google-chrome-stable"
+
+export PASSWORD_STORE_DIR="$HOME/.local/share/password-store"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_DATA_HOME="$HOME/.local/share"
+export NOTMUCH_CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/notmuch-config"
+export MBSYNCRC="${XDG_CONFIG_HOME:-$HOME/.config}/mbsync/config"
+export GIT_CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/git/config"
+export XINITRC="${XDG_CONFIG_HOME:-$HOME/.config}/x11/xinitrc"
+
+export HISTFILE="${XDG_DATA_HOME:-$HOME/.local/share}/bash_history"
+```
 ### some base apt install
 ```
 sudo apt install build-essential cmake p7zip-full \
@@ -47,7 +86,12 @@ sudo apt-get install lazygit
 * chrome
 
 * sogoupinyin
-
+```
+sudo apt-get install fcitx
+reboot
+sudo  dpkg -i sogoupinyin_版本号_amd64.deb
+sudo apt -f install
+```
 * uTools
 
 * fzf
@@ -75,6 +119,14 @@ sudo apt install yarn
 sudo apt install golang-go  (for plug vim-hexokinase)
 ```
 * cuda
+lsmod | grep nouveau
+sudo vim /etc/modprobe.d/blacklist-nouveau.conf
+```
+blacklist nouveau
+options nouveau modeset=0
+sudo update-initramfs -u
+```
+lsmod | grep nouveau
 
 * miniconda
 
@@ -177,26 +229,6 @@ sudo apt-get install brightness-controller-simple
 * ncmpcpp config
 * ~/.profile
 
-## basic env varieties
-```
-BUILD_HOME="$HOME/Repos/build"
-SCRIPT_HOME="$HOME/scrips"
-
-export TERMINAL=st
-export EDITOR=nvim
-export BROWSER="google-chrome-stable"
-
-export PASSWORD_STORE_DIR="$HOME/.local/share/password-store"
-export XDG_CONFIG_HOME="$HOME/.config"
-export XDG_CACHE_HOME="$HOME/.cache"
-export XDG_DATA_HOME="$HOME/.local/share"
-export NOTMUCH_CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/notmuch-config"
-export MBSYNCRC="${XDG_CONFIG_HOME:-$HOME/.config}/mbsync/config"
-export GIT_CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/git/config"
-export XINITRC="${XDG_CONFIG_HOME:-$HOME/.config}/x11/xinitrc"
-
-#export HISTFILE="${XDG_DATA_HOME:-$HOME/.local/share}/bash_history"
-```
 * paper -> Document
 * note, md -> Document
 * source -> Document
