@@ -50,10 +50,7 @@ export HISTFILE="${XDG_DATA_HOME:-$HOME/.local/share}/bash_history"
 ```
 ### some base apt install
 ```
-sudo apt install build-essential cmake p7zip-full \
-curl git neofetch proxychains fcitx \
-openssh-server net-tools feh figlet compton silversearcher-ag
-arandr groff xclip buleman maim xdotool acpi acpitool
+sudo apt install build-essential cmake p7zip-full \ curl git neofetch proxychains fcitx openssh-server net-tools \ feh figlet compton silversearcher-ag arandr groff xclip buleman maim xdotool acpi acpitool
 ```
 
 * Dependencies for suckless utilities
@@ -64,8 +61,7 @@ sudo apt install libx11-dev libxft-dev libxinerama-dev libharfbuzz-dev sharutils
 fonts-symbola --for more emojis
 ### manaul install
 ```
-sudo apt install dunst sxiv zathura mpv \
-pass neomutt msmtp isync rsync sxhkd lynx abook urlview notmuch
+sudo apt install dunst sxiv zathura mpv \ pass neomutt msmtp isync rsync sxhkd lynx abook urlview notmuch
 ```
 * fish + omf
 ```
