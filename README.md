@@ -113,6 +113,8 @@ sudo apt install yarn
 [sudo] npm -g install instant-markdown-d@next  (for instant-markdown-preview)
 
 sudo apt install golang-go  (for plug vim-hexokinase)
+:CocCommand clangd.install
+
 ```
 * cuda
 lsmod | grep nouveau
@@ -125,7 +127,18 @@ sudo update-initramfs -u
 lsmod | grep nouveau
 
 * miniconda
-
+```
+conda create -n d2l-torch python=3.8.10
+conda activate d2l-torch
+pip install torch torchvision torchaudio
+pip install d2l jupyter
+pip install jupyter_contrib_nbextensions
+jupyter contrib nbextension install --user
+conda create -n opencv python=3.6.10
+conda activate opencv
+pip install  opencv-python==3.4.1.15
+pip install opencv-contrib-python==3.4.1.15
+```
 * nerd font
 
 * ranger
