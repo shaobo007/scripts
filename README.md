@@ -28,7 +28,7 @@ there are some scripts
 ```
 * sudo systemctl daemon-reload
 
-### basic env varieties : /etc/profile
+### basic env varieties : $HOME/.profile
 ```
 BUILD_HOME="$HOME/Repos/build"
 SCRIPT_HOME="$HOME/scrips"
