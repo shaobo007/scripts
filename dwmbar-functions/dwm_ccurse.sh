@@ -7,7 +7,7 @@
 # Dependencies: calcurse
 
 dwm_ccurse () {
-    APTSFILE="$HOME/.calcurse/apts"
+    APTSFILE="$HOME/.cache/.calcurse/apts"
     APPOINTMENT=$(head -n 1 "$APTSFILE" | sed -r 's/\[1\] //')
 
     if [ "$APPOINTMENT" != "" ]; then

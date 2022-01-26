@@ -96,7 +96,7 @@ git clone --depth 1 https://github.com/junegunn/fzf.git
 ```
 * nvim
 
-requirements:
+Requirements:
 ```{bash}
 sudo add-apt-repository ppa:neovim-ppa/stable
 sudo apt update
@@ -114,7 +114,8 @@ sudo apt install yarn
 
 sudo apt install golang-go  (for plug vim-hexokinase)
 :CocCommand clangd.install
-
+vimspector:
+./install_badget.py --enable-python
 ```
 * cuda
 lsmod | grep nouveau
@@ -149,8 +150,14 @@ pip install ranger-fm ueberzug
 
 ### some suckless utilities
 
-* dwm st dmenu
-1. add some useful layout to dwm
+* dwm st dmenu tabbed
+* surf
+```
+ sudo apt-get update
+ sudo apt install libwebkit2gtk-4.0-dev libgcr-3-dev libglib2.0-dev
+ sudo apt install gstreamer1.0-gtk3 gstreamer1.0-plugins-good gstreamer1.0-libav
+
+```
 * slock
 ```
 
