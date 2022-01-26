@@ -16,10 +16,7 @@
 
 set -euo pipefail
 DMENU="dmenu -i -l 20 -p"
-DMBROWSER="google-chrome-stable"
-DMTERM="st -e"
-
-# Search engine config 
+# Search engine config
 declare -A websearch
 # Syntax:
 # websearch[name]="https://www.example.com/search?q="
@@ -54,7 +51,7 @@ main() {
 
   # Display search results in web browser
   # shellcheck disable=SC2154
-  $DMBROWSER "${url}${query}"
+  surf-open "${url}${query}"
 }
 
 [[ "${BASH_SOURCE[0]}" == "${0}" ]] && main "$@"

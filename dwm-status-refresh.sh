@@ -6,7 +6,8 @@
 # Within that line, the first and ninth numbers after ':' are respectively the received and transmited bytes.
 
 function get_weather() {
-  LOCATION=Hangzhou
+  #LOCATION=Hangzhou
+  LOCATION=Changsha
 
   printf "%s" "$SEP1"
   if [ "$IDENTIFIER" = "unicode" ]; then
@@ -222,8 +223,8 @@ vel_trans=$(get_velocity $transmitted_bytes $old_transmitted_bytes $now)
 # Wait before checking again.
 #sleep 0.5
 
-#xsetroot -name "  $(get_weather) $(print_mem_per) $(print_gpu_stat) 🌐⬇️ $vel_recv ⬆️ $vel_trans $(dwm_alsa) |$(print_bat)|$(show_record) $(print_date) "
-xsetroot -name "  $(get_weather) $(print_mem_per) 🌐 ⬇️$vel_recv ⬆️$vel_trans $(print_volume) |$(print_bat)|$(show_record) $(print_date) "
+xsetroot -name "  $(get_weather) $(print_mem_per) $(print_gpu_stat) 🌐⬇️ $vel_recv ⬆️ $vel_trans $(print_volume) |$(print_bat)|$(show_record) $(print_date) "
+#xsetroot -name "  $(get_weather) $(print_mem_per) 🌐 ⬇️$vel_recv ⬆️$vel_trans $(print_volume) |$(print_bat)|$(show_record) $(print_date) "
 # Update old values to perform new calculations
 old_received_bytes=$received_bytes
 old_transmitted_bytes=$transmitted_bytes
