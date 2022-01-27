@@ -156,7 +156,7 @@ pip install ranger-fm ueberzug
  sudo apt-get update
  sudo apt install libwebkit2gtk-4.0-dev libgcr-3-dev libglib2.0-dev
  sudo apt install gstreamer1.0-gtk3 gstreamer1.0-plugins-good gstreamer1.0-libav
-
+ sudo apt install aria2
 ```
 * slock
 ```
