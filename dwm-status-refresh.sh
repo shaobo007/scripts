@@ -12,7 +12,7 @@ function get_weather() {
   printf "%s" "$SEP1"
   if [ "$IDENTIFIER" = "unicode" ]; then
     #printf "%s" "$(curl -s wttr.in/$LOCATION?format="%C+%t")"
-    printf "%s" "$(curl -s wttr.in/$LOCATION?format=3)"
+    printf "%s" "$(curl -s wttr.in/$LOCATION?format=3 | awk '{print $1 $2 " " $3 }')"
   else
     printf "WEA %s" "$(curl -s wttr.in/$LOCATION?format=3 | grep -o "[0-9].*")"
   fi
@@ -51,16 +51,6 @@ get_bytes
 old_received_bytes=$received_bytes
 old_transmitted_bytes=$transmitted_bytes
 old_time=$now
-#print_volume() {
-#volume="$(amixer get Master | tail -n1 | sed -r 's/.*\[(.*)%\].*/\1/')"
-#togvol="$(amixer get Master | tail -n1 | sed -r 's/.*\[.*\].*\[.*\].*\[(.*)\].*/\1/')"
-#if test "$volume" -gt 0 && test "$togvol"=="on";
-#then
-#echo -e "\uE05D${volume}"
-#else
-#echo -e "Mute"
-#fi
-#}
 
 print_volume(){
   VOL=$(amixer get Master | tail -n1 | sed -r "s/.*\[(.*)%\].*/\1/")
