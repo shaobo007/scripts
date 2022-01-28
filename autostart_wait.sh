@@ -1,6 +1,5 @@
 #!/bin/bash
 sleep 2
-mpd &
-fcitx &
-utools &
-#run-mailsync &
+killall -q mpd; mpd &
+killall -q fcitx; fcitx &
+killall -q utools; utools &
